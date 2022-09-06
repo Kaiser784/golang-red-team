@@ -2,7 +2,7 @@ package main
 
 import(
 	"fmt"
-	"port/port.go"
+	"github.com/Kaiser784/golang-red-team/portscan/port"
 )
 
 func main(){
@@ -17,7 +17,7 @@ func main(){
 	
 	fmt.Print()
 	fmt.Println("Port Scan Commencing....")
-	open := BaseScan("tcp", host, port)
+	open := port.BaseScan(host)
 
-	fmt.Printf("Port Open: %t\n", open)
+	fmt.Println(open)
 }

@@ -26,7 +26,7 @@ func ScanPort(protocol, hostname string, port int) ScanResult{
 	return result
 }
 
-func BaseScan(hostname string) []ScanResult{
+func BaseScan(hostname string) []ScanResult {
 	var results []ScanResult
 
 	for i:=0; i<=1024; i++ {
