@@ -6,18 +6,18 @@ import(
 )
 
 func main(){
-	var port int
+	// var p int
 	var host string
 	
 	fmt.Print("Enter host you want to scan: ")
 	fmt.Scan(&host)
 
-	fmt.Print("Enter Port you want to scan: ")
-	fmt.Scan(&port)
+	// fmt.Print("Enter Port you want to scan: ")
+	// fmt.Scan(&p)
 	
-	fmt.Print()
 	fmt.Println("Port Scan Commencing....")
-	open := port.BaseScan(host)
+	// open := 
+	port.BaseScan(host)
 
-	fmt.Println(open)
+	// fmt.Println(open)
 }

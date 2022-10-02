@@ -1,14 +1,15 @@
 package port
 
 import(
+	"fmt"
 	"net"
 	"time"
 	"strconv"
 )
 
 type ScanResult struct{
-	port int
-	state string
+	port 	int
+	state 	string
 }
 
 func ScanPort(protocol, hostname string, port int) ScanResult{
@@ -26,13 +27,23 @@ func ScanPort(protocol, hostname string, port int) ScanResult{
 	return result
 }
 
-func BaseScan(hostname string) []ScanResult {
+func BaseScan(hostname string) {
 	
 	var results []ScanResult
+	var flag int = 0
 
 	for i:=0; i<=1024; i++ {
 		results = append(results, ScanPort("tcp", hostname, i))
+
+		if results[i].state == "Open" {
+			fmt.Print("Port - ", results[i].port)
+			fmt.Printf(" : %s\n", results[i].state)
+			flag++
+		}
+	}
+	if flag == 0 {
+		fmt.Println("All ports are closed or filtered")
 	}
 
-	return results
+	// return results
 }
